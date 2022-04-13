@@ -59,3 +59,13 @@ class BlogIndexPage(Page):
     ]
 
     parent_page_types = ["home.HomePage"]
+    is_creatable = False
+    # max_count=1
+
+# class AlternatePage(Page):
+#     alternate_name = models.CharField(max_length=255)
+
+#     content_panels = Page.content_panels + [
+#         FieldPanel("alternate_name"),
+#     ]
+#     parent_page_types = ["blog.BlogIndexPage"]

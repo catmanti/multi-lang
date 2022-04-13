@@ -84,8 +84,6 @@ TEMPLATES = [
         },
     },
 ]
-print("------project --",PROJECT_DIR)
-print("------base --",BASE_DIR)
 
 WSGI_APPLICATION = 'tutorial.wsgi.application'
 

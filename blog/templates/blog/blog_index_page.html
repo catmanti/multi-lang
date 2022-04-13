@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load i18n wagtailcore_tags wagtailimages_tags %}
+{% block content %}
+<div class="container">
+  {% if page %}
+  {% for translation in page.get_translations.live %}
+  {% get_language_info for translation.locale.language_code as lang %}
+  <a href="{% pageurl translation %}" rel="alternate" hreflang="{{ lang.code }}">
+    {{ lang.name_local }}
+  </a>
+  {% endfor %}
+  {% endif %}
+  <h1>{{ page.title }}</h1>
+
+  <div class="intro">{{ page.intro|richtext }}</div>
+
+  {% for post in page.get_children %}
+  <div class="card mb-3" style="max-width: 1024px;">
+
+    <div class="row g-0">
+      <div class="col-md-4">
+        <a href="{% pageurl post %}"> {% image post.specific.image max-200x300 class='img-fluid rounded-start' %} </a>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <a class="card-title h2" href="{% pageurl post %}">{{post.title}}</a>
+          <p class="card-text">{{post.specific.body}}</p>
+          <p class="card-text"><small class="text-muted">{{post.specific.publication_date}}</small></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  {% endfor %}
+</div>
+{% endblock content %}

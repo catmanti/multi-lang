@@ -1,0 +1,12 @@
+body {
+    background-color: #eee;
+}
+img {
+    margin-top: -25px;
+    margin-left: 25px;
+}
+.wrapper {
+    margin-top: 120px;
+    background-color: rgb(168, 190, 183);
+    height: 300px;
+}

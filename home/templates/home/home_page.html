@@ -1,21 +1,33 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static  wagtailcore_tags wagtailimages_tags %}
 
-{% block body_class %}template-homepage{% endblock %}
-
-{% block extra_css %}
-
-{% comment %}
-Delete the line below if you're just getting started and want to remove the welcome screen!
-{% endcomment %}
-<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
-{% endblock extra_css %}
 
 {% block content %}
+<h1>Catman</h1>
+{{page.title}}
+<div class="wrapper">
+  {% image self.main_image fill-1200x800 as img %}
+    <img src="{{img.url}}" height="350"  alt="" srcset="">
 
-{% comment %}
-Delete the line below if you're just getting started and want to remove the welcome screen!
-{% endcomment %}
-{% include 'home/welcome_page.html' %}
-
+</div>
+{% comment %} Start of carousel {% endcomment %}
+ <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      {% for pic in self.carousel_images.all %}
+      {% image pic.image scale-100 as img %}
+      <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
+        <img src="{{img.url}}" height="350" class=" rounded " alt="{{img.alt}}">
+      </div>
+      {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+{% comment %} End of carousel {% endcomment %}
 {% endblock content %}
