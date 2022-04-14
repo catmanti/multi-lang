@@ -5,7 +5,7 @@ add folder: si
 copy all the files in en folder to it
 Now change __init__.py file
 add:
-in  LANG_INFO = {
+```in  LANG_INFO = {
 "si": {
     "bidi": False,
     "code": "ro",
@@ -13,3 +13,4 @@ in  LANG_INFO = {
     "name_local": "සිංහල",
      },
 }
+```
