@@ -5,11 +5,12 @@ add folder: si
 copy all the files in en folder to it
 Now change __init__.py file
 add:
-    in  LANG_INFO = {
-    "si": {
-        "bidi": False,
-        "code": "ro",
-        "name": "Sinhala",
-        "name_local": "සිංහල",
-         },
-    }
+```in  LANG_INFO = {
+"si": {
+    "bidi": False,
+    "code": "ro",
+    "name": "Sinhala",
+    "name_local": "සිංහල",
+     },
+}
+```
