@@ -1,3 +1,4 @@
+"""Add Changers to HomePage"""
 from django.db import models
 
 from wagtail.admin.edit_handlers import InlinePanel, FieldPanel, MultiFieldPanel
