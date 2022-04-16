@@ -30,4 +30,13 @@
     </button>
   </div>
 {% comment %} End of carousel {% endcomment %}
+{% if settings.site_settings.SocialMediaSettings.twitter %}
+<div class="container">
+  <a href="{{settings.site_settings.SocialMediaSettings.twitter}}"><i class="fa-brands fa-twitter-square fa-2x"></i></a>
+  <span>&nbsp&nbsp&nbsp</span>
+  <a href="{{settings.site_settings.SocialMediaSettings.youtube}}"><i class="fa-brands fa-youtube fa-2x"></i></a>
+  <span>&nbsp&nbsp&nbsp</span>
+  <a href="{{settings.site_settings.SocialMediaSettings.facebook}}"><i class="fa-brands fa-facebook-square fa-2x"></i></a>
+</div>
+{% endif %}
 {% endblock content %}
